@@ -1,0 +1,25 @@
+/*Java Type Casting Write a program to perform both the type casting
+ Widening Casting (automatically) - converting a smaller type to a larger type size 
+byte -> short -> char -> int -> long -> float -> double
+ Narrowing Casting (manually) - converting a larger type to
+a smaller size type double -> float -> long -> int -> char -> short -> byte*/
+
+
+
+public class TypeCastingExample {
+    public static void main(String[] args) {
+        // Widening casting example
+        int myInt = 5;
+        double myDouble = myInt; // Automatically converts int to double
+        System.out.println("Widening Casting Example:");
+        System.out.println("Int value: " + myInt);
+        System.out.println("Double value: " + myDouble);
+
+        // Narrowing casting example
+        double myDouble2 = 3.14159;
+        int myInt2 = (int) myDouble2; // Manually converts double to int
+        System.out.println("Narrowing Casting Example:");
+        System.out.println("Double value: " + myDouble2);
+        System.out.println("Int value: " + myInt2);
+    }
+}

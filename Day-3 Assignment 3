@@ -1,0 +1,39 @@
+//Write a Thread program in java Using isAlive() to prevent concurrency problems
+
+
+public class MyThread implements Runnable {
+    Thread t;
+    String name;
+
+    MyThread(String threadName) {
+        name = threadName;
+        t = new Thread(this, name);
+        System.out.println("New Thread: " + t);
+        t.start();
+    }
+
+    public void run() {
+        try {
+            for (int i = 5; i > 0; i--) {
+                System.out.println(name + ": " + i);
+                Thread.sleep(1000);
+            }
+        } catch (InterruptedException e) {
+            System.out.println(name + "Interrupted");
+        }
+        System.out.println(name + " exiting.");
+    }
+}
+
+public class Main {
+    public static void main(String args[]) {
+        MyThread mt1 = new MyThread("Thread-1");
+        MyThread mt2 = new MyThread("Thread-2");
+        
+        while(mt1.t.isAlive() || mt2.t.isAlive()) {
+            // Keep the main thread alive until both threads have finished
+        }
+        
+        System.out.println("Main thread exiting.");
+    }
+}

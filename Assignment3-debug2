@@ -1,0 +1,32 @@
+//Find what is wrong in this inheritance
+
+
+class Animal {
+    void eat() {
+        System.out.println("eating...");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("barking...");
+    }
+}
+
+class BabyDog extends Dog {
+    void weep() {
+        System.out.println("weeping...");
+    }
+}
+
+class TestInheritance2 {
+    public static void main(String args[]) {
+        BabyDog d = new BabyDog();
+        Animal a = new Animal();
+        a.eat();
+        // The Animal class does not have bark() and weep() methods, so they cannot be called on an Animal object.
+        d.weep();
+        d.bark();
+        d.eat();
+    }
+}

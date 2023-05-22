@@ -1,0 +1,11 @@
+//Signed Right Shift Operator
+
+public class RightShiftExample {
+    public static void main(String[] args) {
+        int a = -10; // decimal value -10 represented in 2's complement binary form
+        int b = a >> 2;
+
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+    }
+}
